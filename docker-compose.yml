@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: devops-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fintechbank
+    ports:
+      - "3307:3306"
+
+  backend:
+    build: ./fintech-backend
+    container_name: devops-backend
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./fintech-frontend
+    container_name: devops-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
