@@ -1,0 +1,14 @@
+{
+  "dashboard": {
+    "title": "FinTech Platform Operations",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "API Uptime Status",
+        "targets": [
+          { "expr": "up{job=\"fintech-app\"}" }
+        ]
+      }
+    ]
+  }
+}

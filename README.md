@@ -263,3 +263,21 @@ Each part runs in its own container: the React UI, the Spring Boot API, the data
 ⭐ If you find this project useful, consider giving it a star!
 
 </div>
+----------------
+
+cat << 'EOF' >> README.md
+
+## 🚀 DevOps Infrastructure & Tech Stack
+* **Containerization:** Podman & Docker container engine with OCI images.
+* **Infrastructure as Code (IaC):** OpenTofu.
+* **Configuration Management:** Ansible.
+* **Orchestration:** Kubernetes (K3s).
+* **CI/CD Automation:** Jenkins pipeline (`Jenkinsfile`).
+* **Monitoring & Logging:** Prometheus, Grafana, Alertmanager, and OpenSearch.
+
+## 🛠️ Port Reference
+* Jenkins / API: `8080`
+* Prometheus: `9090`
+* Grafana: `3000`
+* OpenSearch: `9200`
+EOF

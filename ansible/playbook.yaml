@@ -1,0 +1,18 @@
+---
+- name: Configure FinTech DevOps Environment
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Ensure required local deployment directories exist
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop:
+        - /tmp/fintech-artifacts
+        - /tmp/fintech-logs
+        
+    - name: Write configuration verification status
+      copy:
+        content: "Ansible configuration management executed successfully at {{ ansible_date_time.iso8601 }}"
+        dest: /tmp/fintech-artifacts/ansible-status.txt

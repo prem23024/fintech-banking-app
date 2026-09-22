@@ -1,0 +1,11 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'devops-team'
+
+receivers:
+  - name: 'devops-team'
+    email_configs:
+      - to: 'admin@fintech.local'
+        send_resolved: true
